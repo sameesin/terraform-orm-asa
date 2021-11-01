@@ -7,9 +7,6 @@ terraform {
       version = "~> 4.46.0"
     }
 
-    template = {
-      version = "~> 2.2.0"
-    }
 
   }
 }

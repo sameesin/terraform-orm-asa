@@ -12,7 +12,11 @@ enable_password   = "C8Npp2E61Az@6z3L"
 # nic0 needs to be the management interface
 num_instances = 1
 # The Availability Domain Number for vm
-vm_ads_number = [1]
+vm_ads_number  = [1]
+mgmt_network   = "mgmt"
+inside_network = "inside"
+dmz1_network   = "dmz1"
+dmz2_network   = "dmz2"
 networks = [
   {
     name        = "mgmt"
@@ -43,7 +47,23 @@ networks = [
     external_ip = false
   }
 ]
-mgmt_network   = "mgmt"
-inside_network = "inside"
-dmz1_network   = "dmz1"
-dmz2_network   = "dmz2"
+network_1_name        = "mgmt"
+network_1_vpn_cidr    = "10.20.0.0/16"
+network_1_subnet_cidr = "10.20.1.0/24"
+network_1_private_ip  = ["10.20.1.10"]
+network_1_external_ip = true
+network_2_name        = "inside"
+network_2_vpn_cidr    = "10.21.0.0/16"
+network_2_subnet_cidr = "10.21.1.0/24"
+network_2_private_ip  = ["10.21.1.10"]
+network_2_external_ip = false
+network_3_name        = "dmz1"
+network_3_vpn_cidr    = "10.22.0.0/16"
+network_3_subnet_cidr = "10.22.1.0/24"
+network_3_private_ip  = ["10.22.1.10"]
+network_3_external_ip = false
+network_4_name        = "dmz2"
+network_4_vpn_cidr    = "10.23.0.0/16"
+network_4_subnet_cidr = "10.23.1.0/24"
+network_4_private_ip  = ["10.23.1.10"]
+network_4_external_ip = false

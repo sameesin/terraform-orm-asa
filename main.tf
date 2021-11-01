@@ -3,6 +3,39 @@
 ###############
 locals {
   ha_enabled = var.num_instances > 1 ? true : false
+
+  # convert flatten networks back to a list of objects
+
+  new_networks = [
+    {
+      name        = network_1_name
+      vpn_cidr    = network_1_vpn_cidr
+      subnet_cidr = network_1_subnet_cidr
+      private_ip  = network_1_private_ip
+      external_ip = network_1_external_ip
+    },
+    {
+      name        = network_2_name
+      vpn_cidr    = network_2_vpn_cidr
+      subnet_cidr = network_2_subnet_cidr
+      private_ip  = network_2_private_ip
+      external_ip = network_2_external_ip
+    },
+    {
+      name        = network_3_name
+      vpn_cidr    = network_3_vpn_cidr
+      subnet_cidr = network_3_subnet_cidr
+      private_ip  = network_3_private_ip
+      external_ip = network_3_external_ip
+    },
+    {
+      name        = network_4_name
+      vpn_cidr    = network_4_vpn_cidr
+      subnet_cidr = network_4_subnet_cidr
+      private_ip  = network_4_private_ip
+      external_ip = network_4_external_ip
+    }
+  ]
 }
 
 ###############
@@ -13,7 +46,7 @@ module "networking" {
   compartment_id  = var.compartment_id
   region          = var.region
   label_prefix    = var.label_prefix
-  networks        = var.networks
+  networks        = local.new_networks
   inside_network  = var.inside_network
   mgmt_network    = var.mgmt_network
   outside_network = var.outside_network

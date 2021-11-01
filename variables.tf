@@ -79,15 +79,6 @@ variable "enable_password" {
 }
 
 
-############################
-#  Network Configuration   #
-############################
-variable "networks" {
-  type        = list(object({ name = string, vcn_cidr = string, subnet_cidr = string, private_ip = list(string), external_ip = bool }))
-  description = "a list of VPC network info"
-  default     = []
-}
-
 variable "mgmt_network" {
   type        = string
   description = "management network name"
@@ -129,4 +120,106 @@ variable "startup_script" {
   type        = string
   description = "vm image"
   default     = ""
+}
+
+
+
+############################
+#  Network Configuration (flattened)   #
+############################
+variable "networks" {
+  type        = list(object({ name = string, vcn_cidr = string, subnet_cidr = string, private_ip = list(string), external_ip = bool }))
+  description = "a list of VPC network info"
+  default     = []
+}
+
+variable "network_1_name" {
+
+}
+
+variable "network_1_vpn_cidr" {
+
+}
+
+variable "network_1_subnet_cidr" {
+
+}
+
+variable "network_1_private_ip" {
+  type = list(string)
+}
+
+
+variable "network_1_external_ip" {
+
+  type    = bool
+  default = false
+}
+
+variable "network_2_name" {
+
+}
+
+variable "network_2_vpn_cidr" {
+
+}
+
+variable "network_2_subnet_cidr" {
+
+}
+
+variable "network_2_private_ip" {
+  type = list(string)
+}
+
+
+variable "network_2_external_ip" {
+
+  type    = bool
+  default = false
+}
+
+variable "network_3_name" {
+
+}
+
+variable "network_3_vpn_cidr" {
+
+}
+
+variable "network_3_subnet_cidr" {
+
+}
+
+variable "network_3_private_ip" {
+  type = list(string)
+}
+
+
+variable "network_3_external_ip" {
+
+  type    = bool
+  default = false
+}
+variable "network_4_name" {
+
+}
+
+variable "network_4_vpn_cidr" {
+
+}
+
+variable "network_4_subnet_cidr" {
+
+}
+
+variable "network_4_private_ip" {
+  type = list(string)
+}
+
+
+variable "network_4_external_ip" {
+
+  type    = bool
+  default = false
 }

@@ -15,6 +15,7 @@ variable "private_key" {
 }
 
 variable "private_key_path" {
+  default = ""
 }
 
 variable "region" {

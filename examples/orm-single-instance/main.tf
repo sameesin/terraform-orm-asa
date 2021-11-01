@@ -1,12 +1,11 @@
 module "asa-1" {
-  source            = "../../"
+  source            = "github.com/pydevops/terraform-orm-asa.git"
   num_instances     = var.num_instances
   vm_ads_number     = var.vm_ads_number
   user_ocid         = var.user_ocid
   fingerprint       = var.fingerprint
   tenancy_ocid      = var.tenancy_ocid
-  private_key_path  = var.private_key_path
-  private_key       = null
+  private_key       = var.private_key
   region            = var.region
   compartment_id    = var.compartment_id
   label_prefix      = var.label_prefix

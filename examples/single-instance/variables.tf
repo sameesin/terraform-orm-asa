@@ -93,7 +93,7 @@ variable "network_1_name" {
 
 }
 
-variable "network_1_vpn_cidr" {
+variable "network_1_vcn_cidr" {
 
 }
 
@@ -116,7 +116,7 @@ variable "network_2_name" {
 
 }
 
-variable "network_2_vpn_cidr" {
+variable "network_2_vcn_cidr" {
 
 }
 
@@ -139,7 +139,7 @@ variable "network_3_name" {
 
 }
 
-variable "network_3_vpn_cidr" {
+variable "network_3_vcn_cidr" {
 
 }
 
@@ -161,7 +161,7 @@ variable "network_4_name" {
 
 }
 
-variable "network_4_vpn_cidr" {
+variable "network_4_vcn_cidr" {
 
 }
 

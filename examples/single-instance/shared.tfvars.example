@@ -17,36 +17,36 @@ mgmt_network   = "mgmt"
 inside_network = "inside"
 dmz1_network   = "dmz1"
 dmz2_network   = "dmz2"
-networks = [
-  {
-    name        = "mgmt"
-    vcn_cidr    = "10.20.0.0/16"
-    subnet_cidr = "10.20.1.0/24"
-    private_ip  = ["10.20.1.10"]
-    external_ip = true
-  },
-  {
-    name        = "inside"
-    vcn_cidr    = "10.21.0.0/16"
-    subnet_cidr = "10.21.1.0/24"
-    private_ip  = ["10.21.1.10"]
-    external_ip = false
-  },
-  {
-    name        = "dmz1"
-    vcn_cidr    = "10.22.0.0/16"
-    subnet_cidr = "10.22.1.0/24"
-    private_ip  = ["10.22.1.10"]
-    external_ip = false
-  },
-  {
-    name        = "dmz2"
-    vcn_cidr    = "10.23.0.0/16"
-    subnet_cidr = "10.23.1.0/24"
-    private_ip  = ["10.23.1.10"]
-    external_ip = false
-  }
-]
+# networks = [
+#   {
+#     name        = "mgmt"
+#     vcn_cidr    = "10.20.0.0/16"
+#     subnet_cidr = "10.20.1.0/24"
+#     private_ip  = ["10.20.1.10"]
+#     external_ip = true
+#   },
+#   {
+#     name        = "inside"
+#     vcn_cidr    = "10.21.0.0/16"
+#     subnet_cidr = "10.21.1.0/24"
+#     private_ip  = ["10.21.1.10"]
+#     external_ip = false
+#   },
+#   {
+#     name        = "dmz1"
+#     vcn_cidr    = "10.22.0.0/16"
+#     subnet_cidr = "10.22.1.0/24"
+#     private_ip  = ["10.22.1.10"]
+#     external_ip = false
+#   },
+#   {
+#     name        = "dmz2"
+#     vcn_cidr    = "10.23.0.0/16"
+#     subnet_cidr = "10.23.1.0/24"
+#     private_ip  = ["10.23.1.10"]
+#     external_ip = false
+#   }
+# ]
 network_1_name        = "mgmt"
 network_1_vcn_cidr    = "10.20.0.0/16"
 network_1_subnet_cidr = "10.20.1.0/24"

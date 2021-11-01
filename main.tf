@@ -5,8 +5,7 @@ locals {
   ha_enabled = var.num_instances > 1 ? true : false
 
   # convert flatten networks back to a list of objects
-
-  new_networks = [
+  networks = [
     {
       name        = var.network_1_name
       vcn_cidr    = var.network_1_vcn_cidr
@@ -46,7 +45,7 @@ module "networking" {
   compartment_id  = var.compartment_id
   region          = var.region
   label_prefix    = var.label_prefix
-  networks        = local.new_networks
+  networks        = local.networks
   inside_network  = var.inside_network
   mgmt_network    = var.mgmt_network
   outside_network = var.outside_network

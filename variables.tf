@@ -127,11 +127,11 @@ variable "startup_script" {
 ############################
 #  Network Configuration (flattened)   #
 ############################
-variable "networks" {
-  type        = list(object({ name = string, vcn_cidr = string, subnet_cidr = string, private_ip = list(string), external_ip = bool }))
-  description = "a list of VPC network info"
-  default     = []
-}
+# variable "networks" {
+#   type        = list(object({ name = string, vcn_cidr = string, subnet_cidr = string, private_ip = list(string), external_ip = bool }))
+#   description = "a list of VPC network info"
+#   default     = []
+# }
 
 variable "network_1_name" {
 

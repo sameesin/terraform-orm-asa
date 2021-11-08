@@ -10,10 +10,15 @@ variable "region" {
   description = "The region"
 }
 
-variable "vm_ads_number" {
-  type        = list(number)
-  default     = [1]
-  description = "The Availability Domain Number for vm, OCI Availability Domains: 1,2,3  (subject to region availability)"
+# variable "vm_ads_number" {
+#   type        = list(number)
+#   default     = [1]
+#   description = "The Availability Domain Number for vm, OCI Availability Domains: 1,2,3  (subject to region availability)"
+# }
+
+variable "multiple_ad" {
+  type = bool
+  default = false
 }
 
 variable "networks_list" {

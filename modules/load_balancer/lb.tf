@@ -6,17 +6,22 @@ locals {
   inside_vnic_ids = [for x in local.vnics_attachments : x.vnic_id if x.display_name == "asav-${var.inside_network}-vnic"]
 }
 
-data "oci_identity_availability_domain" "ad" {
-  count          = length(var.instance_ids)
+# data "oci_identity_availability_domain" "ad" {
+#   count          = length(var.instance_ids)
+#   compartment_id = var.tenancy_ocid
+#   ad_number      = var.vm_ads_number[count.index]
+# }
+
+data "oci_identity_availability_domains" "ads" {
+  #Required
   compartment_id = var.tenancy_ocid
-  ad_number      = var.vm_ads_number[count.index]
 }
 
 # Gets a list of VNIC attachments on the instance
 data "oci_core_vnic_attachments" "instance_vnics" {
   count               = length(var.instance_ids)
   compartment_id      = var.compartment_id
-  availability_domain = data.oci_identity_availability_domain.ad[count.index].name
+  availability_domain = var.multiple_ad ? data.oci_identity_availability_domains.ads.availability_domains[count.index - 1].name : data.oci_identity_availability_domains.ads.availability_domains[0].name
   instance_id         = var.instance_ids[count.index]
 }
 

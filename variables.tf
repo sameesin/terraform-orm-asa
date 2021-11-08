@@ -2,27 +2,13 @@
 #  Provider Configuration  #
 ############################
 variable "tenancy_ocid" {
-}
-
-variable "user_ocid" {
-}
-
-variable "fingerprint" {
-}
-
-# The contents of the private key file. Required if private_key_path is not defined, and takes precedence over private_key_path if both are defined.
-variable "private_key" {
-}
-
-variable "private_key_path" {
-  default = ""
+  type = string
 }
 
 variable "region" {
   # List of regions: https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#ServiceAvailabilityAcrossRegions
   description = "the OCI region where resources will be created"
   type        = string
-  default     = null
 }
 
 variable "compartment_id" {
@@ -41,10 +27,15 @@ variable "label_prefix" {
   default     = "none"
 }
 
-variable "vm_ads_number" {
-  type        = list(number)
-  default     = [1]
-  description = "The Availability Domain Number for vm, OCI Availability Domains: 1,2,3  (subject to region availability)"
+# variable "vm_ads_number" {
+#   type        = list(number)
+#   default     = [1]
+#   description = "The Availability Domain Number for vm, OCI Availability Domains: 1,2,3  (subject to region availability)"
+# }
+
+variable "multiple_ad" {
+  type = bool
+  default = false
 }
 
 variable "vm_compute_shape" {

@@ -66,7 +66,7 @@ module "vm" {
   tenancy_ocid           = var.tenancy_ocid
   compartment_id         = var.compartment_id
   region                 = var.region
-  vm_ads_number          = var.vm_ads_number
+  multiple_ad            = var.multiple_ad
   mp_listing_resource_id = var.mp_listing_resource_id
   vm_compute_shape       = var.vm_compute_shape
   startup_script         = var.startup_script
@@ -93,7 +93,7 @@ module "lb-1" {
   compartment_id = var.compartment_id
   tenancy_ocid   = var.tenancy_ocid
   region         = var.region
-  vm_ads_number  = var.vm_ads_number
+  multiple_ad  = var.multiple_ad
   num_instances  = var.num_instances
   service_port   = var.service_port
   inside_network = var.inside_network

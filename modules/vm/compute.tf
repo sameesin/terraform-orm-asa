@@ -11,7 +11,8 @@ resource "random_string" "suffix" {
 resource "oci_core_instance" "asav" {
   count = var.num_instances
   # Required
-  availability_domain = element(local.ADs, var.vm_ads_number[count.index] - 1)
+  #availability_domain = element(local.ADs, var.vm_ads_number[count.index] - 1)
+  availability_domain = var.multiple_ad ? data.oci_identity_availability_domains.ads.availability_domains[count.index - 1].name : data.oci_identity_availability_domains.ads.availability_domains[0].name
   compartment_id      = var.compartment_id
   shape               = var.vm_compute_shape
   source_details {
